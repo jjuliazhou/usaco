@@ -1,3 +1,7 @@
+// https://usaco.org/index.php?page=viewproblem2&cpid=1351
+
+package usaco2324;
+
 // passed ~50% test cases
 
 import java.io.*;

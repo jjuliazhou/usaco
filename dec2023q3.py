@@ -1,19 +1,22 @@
+# https://usaco.org/index.php?page=viewproblem2&cpid=1352
+
 def get_hit_dict(cmd, start_pos, targets):
     assert isinstance(targets, set)
     d = {}
     pos = start_pos
     for i in range(len(cmd)):
         c = cmd[i]
-        if c == "L":
+        if c == "L": # move left
             pos -= 1
-        elif c == "R":
+        elif c == "R": # move right
             pos += 1
         else:
-            if pos in targets:
+            if pos in targets: # increment 1
                 d[pos] = d[pos] + 1 if pos in d else 1
     return d
 
 
+# get command change that hits most targets
 def f(targets, cmd):
     targets = set(targets)
     offsets = [-2, -1, 0, 1, 2]
@@ -25,7 +28,7 @@ def f(targets, cmd):
 
     prev_pos = None
     pos = 0
-    max_score = -1
+    max_score = -1 # max number of targets hit
     for i in range(len(cmd)):
         c = cmd[i]
         prev_c = cmd[i - 1] if i >= 1 else None
@@ -76,6 +79,7 @@ def f(targets, cmd):
     
     print(max_score)
 
+# input and run function
 t, c = input().split()
 targets = input().split()
 targets = list(map(int, targets))

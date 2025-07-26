@@ -1,3 +1,5 @@
+# https://usaco.org/index.php?page=viewproblem2&cpid=1350
+
 # O(N log N)
 def f(N, M, K, cows, weights):
     weights.sort()  # O(N log N)
